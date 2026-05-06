@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const services = [
   {
     badge: null,
@@ -52,13 +54,14 @@ export default function Services() {
 
         {/* システム概要図 */}
         <div className="mb-14 rounded-2xl overflow-hidden shadow-md">
-          <div className="relative">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+          <div className="relative" style={{ maxHeight: '420px' }}>
+            <Image
               src="/images/system-overview.jpg"
               alt="スマート農業ITシステム概要図 — SS自動運転、RTK-GNSS測位、クラウドデータ管理、モニタリングダッシュボードの連携を示す図"
+              width={1280}
+              height={540}
               className="w-full object-cover"
-              style={{ maxHeight: '420px', objectPosition: 'center' }}
+              style={{ maxHeight: '420px', objectFit: 'cover', objectPosition: 'center' }}
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/70 to-transparent px-6 py-4">
               <p className="text-white text-sm font-medium">

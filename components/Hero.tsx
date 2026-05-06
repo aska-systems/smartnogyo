@@ -1,13 +1,16 @@
+import Image from 'next/image'
+
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* 背景画像 */}
       <div className="absolute inset-0">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src="/images/orchard.jpg"
           alt="りんご畑"
-          className="w-full h-full object-cover object-center"
+          fill
+          className="object-cover object-center"
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-slate-900/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
