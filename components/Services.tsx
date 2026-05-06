@@ -1,4 +1,4 @@
-import Image from 'next/image'
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
 const services = [
   {
@@ -55,11 +55,10 @@ export default function Services() {
         {/* システム概要図 */}
         <div className="mb-14 rounded-2xl overflow-hidden shadow-md">
           <div className="relative" style={{ maxHeight: '420px' }}>
-            <Image
-              src="/images/system-overview.jpg"
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`${BASE}/images/system-overview.jpg`}
               alt="スマート農業ITシステム概要図 — SS自動運転、RTK-GNSS測位、クラウドデータ管理、モニタリングダッシュボードの連携を示す図"
-              width={1280}
-              height={540}
               className="w-full object-cover"
               style={{ maxHeight: '420px', objectFit: 'cover', objectPosition: 'center' }}
             />
